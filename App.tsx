@@ -5,6 +5,7 @@ import MapView, {
   MarkerPressEventData,
 } from '@juanpablocs/rn-interactive-maps';
 import SliderCarousel from '@juanpablocs/rn-slider-carousel';
+import SplashScreen from 'react-native-splash-screen';
 
 const markers = [
   {
@@ -62,7 +63,7 @@ const App = () => {
 
   useEffect(() => {
     console.log('App mounted');
-
+    SplashScreen.hide();
     return () => {
       console.log('App unmounted');
     };

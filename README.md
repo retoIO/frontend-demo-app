@@ -9,6 +9,10 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 Source https://whimsical.com/reto-io-maps-7RwYeN6aU1dD47syZ29aj1@6HYTAunKLgTTUkjnwvjtvqPc9phdbgRWCuwDFFTT7LxHvWx
 
+## Demo
+<img src="https://raw.githubusercontent.com/retoIO/frontend-demo-app/main/demo.gif">
+
+
 ## Start your Application
 
 Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:

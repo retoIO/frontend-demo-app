@@ -2,11 +2,11 @@ import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {LoginScreen, MapScreen} from './src/screens';
+import {LoginScreen, MapScreen} from './src/presentation/screens';
 
-type RootStackParamList = {
+export type RootStackParamList = {
   Login: undefined;
-  Map: undefined;
+  Map: {userId: string};
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();

@@ -7,16 +7,21 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import {LoginUseCase} from '../../domain/usecases/LoginUseCase';
+import {RootStackParamList} from '../../../App';
 
-type RootStackParamList = {
-  Login: undefined;
-  Map: undefined;
-};
 type LoginScreenProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
 export const LoginScreen: React.FC<LoginScreenProps> = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const loginUseCase = new LoginUseCase();
+
+  const handleLogin = async () => {
+    const user = await loginUseCase.execute(email, password);
+    navigation.navigate('Map', {userId: user.id});
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.inputView}>
@@ -37,9 +42,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({navigation}) => {
           onChangeText={_password => setPassword(_password)}
         />
       </View>
-      <TouchableOpacity
-        style={styles.loginBtn}
-        onPress={() => navigation.navigate('Map')}>
+      <TouchableOpacity style={styles.loginBtn} onPress={handleLogin}>
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
       <View style={styles.actions}>

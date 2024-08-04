@@ -13,6 +13,55 @@ Source https://whimsical.com/reto-io-maps-7RwYeN6aU1dD47syZ29aj1@6HYTAunKLgTTUkj
 <img src="https://raw.githubusercontent.com/retoIO/frontend-demo-app/main/demo.gif">
 
 
+## Architecture
+<img src="https://raw.githubusercontent.com/retoIO/frontend-demo-app/main/layers.png">
+
+```
+src/
+├── domain/
+│   ├── entities/
+│   │   ├── Benefit.ts
+│   │   └── User.ts
+│   ├── repositories/
+│   │   └── BenefitRepository.ts
+│   └── usecases/
+│       ├── FetchUserBenefitsUseCase.ts
+│       └── LoginUseCase.ts
+├── infrastructure/
+│   ├── api/
+│   │   ├── AuthApi.ts
+│   │   └── BenefitApi.ts
+│   ├── repositories/
+│   │   └── BenefitRepositoryImpl.ts
+├── presentation/
+│   ├── screens/
+│   │   ├── LoginScreen.tsx
+│   │   ├── MapScreen.tsx
+│   └── components/
+│       └── CustomComponent.tsx
+├── __tests__/
+│   ├── domain/
+│   │   └── usecases/
+│   │       ├── FetchUserBenefitsUseCase.test.ts
+│   │       └── LoginUseCase.test.ts
+│   ├── infrastructure/
+│   │   └── repositories/
+│   │       └── BenefitRepositoryImpl.test.ts
+│   ├── presentation/
+│   │   └── screens/
+│   │       ├── LoginScreen.test.tsx
+│   │       └── MapScreen.test.tsx
+├── __mocks__/
+│   ├── @juanpablocs/
+│   │   └── rn-interactive-maps.js
+│   └── @juanpablocs/
+│       └── rn-slider-carousel.js
+├── App.tsx
+├── jest.config.js
+└── babel.config.js
+```
+
+
 ## Start your Application
 
 Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
